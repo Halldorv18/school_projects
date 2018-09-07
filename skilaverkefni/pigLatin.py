@@ -1,18 +1,21 @@
-my_str = input("Enter a word: ")
-my_syllables = "aeiouyAEIOUY"
-for index, letter in enumerate(my_str):
-    for index1, letter_syl in enumerate(my_syllables):
-        if letter_syl == letter:
-            first_split = my_str[:index]+"ay"
-            second_split = my_str[index:]
-            my_new_str = second_split + first_split
-        else:
-            my_new_str = my_str + "yay"
+my_word = input("Enter a word: ")
+vowels = "aeiouyAEIOUY"
+pig_1= "yay"
+pig_2 = "ay"
+
+for index, letter in enumerate(my_word):
+    if my_word.find(".") >= 0:
+        quit()
+    elif letter in vowels and index != 0:
+        syllable = my_word.find(letter)
+        first_part = my_word[ 0 : syllable]
+        second_part = my_word[syllable: - 1]
+        new_word = second_part + first_part + pig_2
         break
-
-print(my_new_str.lower())
-
-
-
-print(first_split)
-print(second_split)
+    elif my_word[0] in vowels:
+        new_word = my_word + pig_1
+        break
+    else:
+        new_word = my_word
+     
+print(new_word)
