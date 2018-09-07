@@ -7,4 +7,3 @@ while counter <= turn_int:
         negetive_int += 1
         print(negetive_int)
     counter +=1
-    
