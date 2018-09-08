@@ -2,29 +2,33 @@ my_word = ""
 vowels = "aeiouyAEIOUY"
 pig_1= "yay"
 pig_2 = "ay"
+counter = 0 
 while my_word != ".":
     my_word = input("Enter a word: ")
     for index, letter in enumerate(my_word):
-        if my_word.find(".") >= 0:
-            quit()
-        
-        elif letter in vowels and len(my_word) == 3:
-            syllable = my_word.find(letter)
-            first_part = my_word[ 0 : syllable]
-            second_part = my_word[syllable: ]
+        syllable = my_word.find(letter)
+        if len(my_word) == 3 and my_word[index] in vowels:
+            first_part = my_word[ 0 : (syllable)]
+            second_part = my_word[1:]
             new_word = second_part + first_part + pig_2
-            break
-
         elif letter in vowels and index != 0:
-            syllable = my_word.find(letter)
             first_part = my_word[ 0 : syllable]
-            second_part = my_word[syllable: - 1]
+            second_part = my_word[syllable : ]
             new_word = second_part + first_part + pig_2
-            break
+            
         elif my_word[0] in vowels:
             new_word = my_word + pig_1
+            
+        elif (letter not in vowels) and (index == -1):
+            new_word = my_word + pig_2
+            print(new_word)
             break
         else:
-            new_word = my_word + "ay"
+            new_word = my_word
+            continue
+        print(new_word)
+        break
         
     print(new_word)
+    print(first_part)
+    print(second_part)
