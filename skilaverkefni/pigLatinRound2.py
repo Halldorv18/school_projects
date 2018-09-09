@@ -12,5 +12,8 @@ while word != ".":
         first_part = word[ 0 : (counter - 1)]
         second_part = word[counter : -1]
         pig_word = second_part + first_part + pig_1
+    
+    
+    
     counter += 1
     print(pig_word)

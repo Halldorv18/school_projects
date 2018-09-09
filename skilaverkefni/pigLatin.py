@@ -19,16 +19,17 @@ while my_word != ".":
         elif my_word[0] in vowels:
             new_word = my_word + pig_1
             
-        elif (letter not in vowels) and (index == -1):
+        elif index == (len(my_word) - 1) and my_word[-1] not in vowels:
             new_word = my_word + pig_2
-            print(new_word)
-            break
+ 
         else:
             new_word = my_word
             continue
-        print(new_word)
-        break
+        if my_word == ".":
+            quit
+        else:
+            print(new_word)
+            break
+
+
         
-    print(new_word)
-    print(first_part)
-    print(second_part)
