@@ -14,6 +14,6 @@ elif holiday == "December 25":
 
 else:
     print("Not a holiday")
-    print(holiday)
+  
     
 
