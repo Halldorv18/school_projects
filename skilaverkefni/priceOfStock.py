@@ -1,6 +1,7 @@
 #User inputs the number of shares.
 #User inputs the price per share in Dollars and a float < 0.
 #After the calculation of the total price of all the shares the user gets to choose to continue or quit.
+
 def brot_str(price):
     check = True
     while check == True:
@@ -8,7 +9,6 @@ def brot_str(price):
             int(price.replace(" ", ""))
             check = False
         except ValueError:
-            print("Invalid price")
             break
     
         counter = 0
@@ -31,9 +31,6 @@ def brot_str(price):
         pp_share_str = dollars + " " + numerator + "/" + denominator
         return pp_share_str, pp_share_int
     
-    
-       
-
 def user_input(number_of_shares):
     try:
         int(number_of_shares)
@@ -44,7 +41,7 @@ def value_check():
     
     invalid_number = True
     while invalid_number == True:
-        pp_share = input("Enter the price (dollars, numerator, denominator): ")
+        pp_share = input("Enter price (dollars, numerator, denominator): ")
     
         try:
             pp_share_str, pp_share_int = brot_str(pp_share)
@@ -53,9 +50,6 @@ def value_check():
             print("Invalid price!")
             continue
     
-            
-
-
 choice = "y"
 while choice == "y":
     try:
