@@ -1,4 +1,3 @@
-
 def get_list():
     a_list = input("Enter elements of list separated by commas: ").strip().split(',')
     return a_list
@@ -8,29 +7,17 @@ def get_integer(prompt):
     return val
 
 def transform(list1, list2, index1, index2):
-    #list2.append(list1[index1 : index2])
-    new_list = []
-    int_index1 = int(index1)
-    int_index2 = int(index2) 
-   
-    new_list.append(list1[int_index1:int_index2:-1])
-    for stuff in list1:
-        if stuff in new_list:
-            list1.remove(stuff)
     
-        
-        #if int_index1 <= index <= int_index2:
-         #   if index == (int_index1 + 1):
-          #      int_index2 -= 1
-           #list1.remove(stuff)
-            
-    
-    
+    temp_list = []
+    for i in range(index1,index2):
+        temp_list.append(list1[i])
 
+    for i in temp_list:
+        list1.remove(i)
+    temp_list.reverse()
+
+    list2 += temp_list
     
-    return new_list
-
-
 
 # Main program starts here - DO NOT change it
 list1 = get_list()
