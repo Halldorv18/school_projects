@@ -1,6 +1,5 @@
 import random
 import string
-
 def get_word_string(filename):
     try:
         with open(filename, "r") as dataFile:
@@ -10,12 +9,10 @@ def get_word_string(filename):
                 word_list.append(line)
             
             word_string = " ".join(word_list)
-
         return word_string
     except:
         print("File {} not found".format(filename))
         return ""
-
 def scrambled_string(word_string):
     if word_string == "":
         return ""
@@ -36,14 +33,8 @@ def scrambled_string(word_string):
             new_string = str(word)
     
         outcome_str += str(new_string) + " "
-
-
-        
-        
-
     return outcome_str
 # Main program starts here - DO NOT change it
-
 random.seed(10)
 filename = input("Enter name of file: ")
 word_string = get_word_string(filename)
