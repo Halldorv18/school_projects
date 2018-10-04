@@ -1,0 +1,6 @@
+here is a line in the test file
+this is another line
+one more line
+that was the line
+guess it was not
+stopping now
