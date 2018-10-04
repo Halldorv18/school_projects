@@ -82,7 +82,7 @@ def play_again():
     else:
         return True
 
-    print(2)
+    
 
     
 # The main program starts here
