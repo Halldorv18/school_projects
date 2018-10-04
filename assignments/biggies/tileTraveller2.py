@@ -54,6 +54,27 @@ def find_directions(col, row):
         valid_directions = SOUTH+WEST
     return valid_directions
 
+def lever_tiles(col, row):
+    coins = 0
+    if col == 1 and row == 2:
+        choice = input("Pull a lever (y/n): ")
+        if choice.lower() == "y":
+            coins = 1
+    elif col == 2 and row == 2:
+        choice = input("Pull a lever (y/n): ")
+        if choice.lower() == "y":
+            coins = 1
+    elif col == 2 and row == 3:
+        choice = input("Pull a lever (y/n): ")
+        if choice.lower() == "y":
+            coins = 1
+    elif col == 3 and row == 2:
+        choice = input("Pull a lever (y/n): ")
+        if choice.lower() == "y":
+            coins = 1
+
+    return coins
+    
 # The main program starts here
 victory = False
 row = 1
@@ -61,7 +82,7 @@ col = 1
 
 valid_directions = NORTH
 print_directions(valid_directions)
-
+coins = 0
 while not victory:
     direction = input("Direction: ")
     direction = direction.lower()
@@ -71,6 +92,10 @@ while not victory:
     else:
         col, row = move(direction, col, row)
         victory = is_victory(col, row)
+        coins1 = coins
+        coins += lever_tiles(col, row)
+        if coins1 != coins:
+            print("You received 1 coins, your total is now {}.".format(coins))
         if victory:
             print("Victory!")
         else:
