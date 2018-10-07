@@ -18,6 +18,6 @@ for stuff in range(0,size):
 sum_of_list = 0
 for number in list_contents:
     sum_of_list += number
+average_of_list = sum_of_list/size
 
-print("The sum of the values in the list is: {}".format(sum_of_list))
-    
+print("The average of the values in the list is: {}".format(average_of_list))
