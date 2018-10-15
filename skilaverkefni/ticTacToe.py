@@ -31,15 +31,24 @@ def change_board(user_choice, x_or_o, board_list):
                 lines.insert(index, x_or_o)
     return board_list
 
-                
-
-
+def print_board(board_list):
+    for lines in board_list:
+        for position in lines:
+            print("{:5}".format(position)) # er ekki ad na ad prenta í linu...
+victory = False
 next_move = "X"
-size_of_game = int(input("Input dimension of the board:"))
-board_list = make_list(size_of_game)
-user_choice = user_input(next_move)
-board_list = change_board(user_choice, next_move, board_list)
-print(board_list)
+while not victory:
+    size_of_game = int(input("Input dimension of the board:"))
+    board_list = make_list(size_of_game)
+    print_board(board_list)
+    user_choice = user_input(next_move)
+    board_list = change_board(user_choice, next_move, board_list)
+    print_board
+    print(board_list)
+    if next_move == "X":
+        next_move = "O"
+    elif next_move == "O":
+        next_move = "X"
 
 
 
