@@ -9,3 +9,12 @@ there was
 a
 farmer who was 
 stupid
+def make_dict(clean_list):
+    dict_of_words = {}
+    for document in clean_list:
+        for word in document:
+            if key, word not in dict_of_words.items():
+                key[word] = set(clean_list.index(document))
+            else:
+                key[word] = set.add(word)
+    print(dict_of_words)

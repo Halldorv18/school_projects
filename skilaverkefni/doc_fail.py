@@ -54,6 +54,7 @@ def operations(clean_list, document_list):
                 for word in search_words:
                     if word in document:
                         index_of_search_words.add(clean_list.index(document))
+                        
             print("Documents that fit search:", end = " ")
                 
             for number_of_doc in index_of_search_words:
